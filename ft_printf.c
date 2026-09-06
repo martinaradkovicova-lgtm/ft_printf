@@ -123,6 +123,28 @@ int main ()
 	return (0);
 }
 
+void print_param(const char *format, va_list *print_list, int i)
+{
+	if (format[i + 1] == 'c')
+		ft_putchar(va_arg(*print_list, int));
+	else if(format[i + 1] == 's')
+		ft_putstr(va_arg(*print_list, char *));
+	else if(format[i + 1] == '%')
+		ft_putchar(format[i]);
+	else if(format[i + 1] == 'i' || format[i + 1] == 'd')
+		ft_putnbr(va_arg(*print_list, int));
+	else if(format[i + 1] == 'u')
+		unsigned_putnbr(va_arg(*print_list, unsigned int));
+	else if(format[i + 1] == 'X')
+		putnbr_base(va_arg(*print_list, int), "0123456789ABCDEF");
+	else if(format[i + 1] == 'x')
+		putnbr_base(va_arg(*print_list, int), "0123456789abcdef");
+	else if (format[i + 1] == 'p')
+		print_void(va_arg(*print_list, void *));
+	else
+		ft_putchar(format[i+1]);
+}
+
 int	ft_printf(const char *format, ...)
 {
 	int i;
@@ -134,24 +156,7 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == 'c')
-				ft_putchar(va_arg(print_list, int));
-			else if(format[i + 1] == 's')
-				ft_putstr(va_arg(print_list, char *));
-			else if(format[i + 1] == '%')
-				ft_putchar(format[i]);
-			else if(format[i + 1] == 'i' || format[i + 1] == 'd')
-				ft_putnbr(va_arg(print_list, int));
-			else if(format[i + 1] == 'u')
-				unsigned_putnbr(va_arg(print_list, unsigned int));
-			else if(format[i + 1] == 'X')
-				putnbr_base(va_arg(print_list, int), "0123456789ABCDEF");
-			else if(format[i + 1] == 'x')
-				putnbr_base(va_arg(print_list, int), "0123456789abcdef");
-			else if (format[i + 1] == 'p')
-				print_void(va_arg(print_list, void *));
-			else
-				ft_putchar(format[i+1]);
+			print_param(format, &print_list, i);	
 			i += 2;
 		}
 		else
