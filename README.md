@@ -63,7 +63,7 @@ cc -Wall -Wextra -Werror main.c libftprintf.a -o prog_name
 ## Resources
 * System manual pages (`man 3 printf`, `man stdarg`)
 ### Books
-* **Head First C: A Brain Friendly Guide** - David Griffiths
+* **Head First C: A Brain Friendly Guide** - David Griffiths (s.344)
 * **Advanced Programming in the UNIX Enviroment** (http://www.apuebook.com/apue3e.html) by W. Richard Stevens, Stephen A. Rago - Chapter 5.11 (Formatted I/O)
 * **C Programming: A Modern Approach** second Edition K. N. King - Chapter 26 (Miscellaneous Library Functions)
 * **The C Programming Language** - 2nd Edition Brian W. Kerhighan Dennis M. Ritchie - Chapter 7.2 (Formatted Output - printf) Chapter 7.3 (Variable-length Argument Lists)
