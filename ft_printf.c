@@ -16,9 +16,9 @@ int	set_param(const char *format, va_list *print_list, int i)
 	else if(format[i + 1] == 'u')
 		count += print_base(va_arg(*print_list, unsigned int), "0123456789");
 	else if(format[i + 1] == 'X')
-		count += print_base(va_arg(*print_list, int), "0123456789ABCDEF");
+		count += print_base(va_arg(*print_list, unsigned int), "0123456789ABCDEF");
 	else if(format[i + 1] == 'x')
-		count += print_base(va_arg(*print_list, int), "0123456789abcdef");
+		count += print_base(va_arg(*print_list, unsigned int), "0123456789abcdef");
 	else if (format[i + 1] == 'p')
 		count += print_pointer(va_arg(*print_list, void *));
 	else
