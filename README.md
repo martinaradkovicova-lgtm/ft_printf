@@ -4,7 +4,12 @@ of the 42 curriculum by mradkovi*
 # ft_printf
 
 ## Description
-The goal of this project was to create a custom function, `ft_printf`, that behaves exactly like the original `printf` function from the `stdio.h` C library (`man 3 printf`).
+The goal of this project was to create a custom function, `ft_printf`, that behaves exactly like the original `printf` function from the `stdio.h` C library (`man 3 printf`). The function converts parameters represented by a % sign followed by a character in the format string.
+
+Prototype:
+```c
+int	ft_printf(const char *format, ...)
+```
 
 The implemented conversions are:
 * `%c` - print a character 
@@ -38,7 +43,7 @@ Removes all object files (.o)
 ```bash
 make fclean
 ```
-Removes object files and libft.a
+Removes object files and libftprintf.a
 ```bash
 make re
 ``` 
@@ -61,3 +66,4 @@ cc -Wall -Wextra -Werror main.c libftprintf.a -o prog_name
 * **Head First C: A Brain Friendly Guide** - David Griffiths
 * **Advanced Programming in the UNIX Enviroment** (http://www.apuebook.com/apue3e.html) by W. Richard Stevens, Stephen A. Rago - Chapter 5.11 (Formatted I/O)
 * **C Programming: A Modern Approach** second Edition K. N. King - Chapter 26 (Miscellaneous Library Functions)
+* **The C Programming Language** - 2nd Edition Brian W. Kerhighan Dennis M. Ritchie - Chapter 7.2 (Formatted Output - printf) Chapter 7.3 (Variable-length Argument Lists)
